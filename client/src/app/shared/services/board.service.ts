@@ -12,8 +12,8 @@ import { environment } from 'src/environments/environment';
 export class BoardService {
 
   private currentBoardId = '';
-  private _currentBoard = new BehaviorSubject<string>('');
   private _isUncheckAll = new BehaviorSubject<boolean>(false);
+  _currentBoard = new BehaviorSubject<string>('');
 
   isUncheckAll$ = this._isUncheckAll.asObservable();
   currentBoard$ = this._currentBoard.asObservable();

@@ -46,8 +46,11 @@ export class ImageService {
           this.updatedImagesOnBoard$.next(imagesInfo as IImage[]);
           this.uncheckAll();
         },
-        err => this.errorService.openSnackBar(
-          err.error.error.hasOwnProperty('serverError') ?  `Can't match tags to this photo` : err.error.error),
+        err => {
+          this.uncheckAll();
+          this.errorService.openSnackBar(
+            err.error.error.hasOwnProperty('serverError') ?  `Can't match tags to this photo` : err.error.error);
+        },
       );
   }
 

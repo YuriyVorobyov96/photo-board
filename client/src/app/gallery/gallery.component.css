@@ -1,8 +1,14 @@
+.gallery-container{
+  padding: 40px 0;
+  margin-top: 20px;
+}
+
 .image-checkbox {
   margin: 0 10px;
 }
 
 ul {
+  background-color: var(--bgColor);
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
@@ -12,9 +18,9 @@ ul {
 }
 
 li {
-  /* flex-grow: 1; */
-  padding: 5px;
+  padding: 10px;
   position: relative;
+  z-index: 10;
 }
 
 li:last-child {
@@ -25,15 +31,18 @@ li:last-child .text-container {
   width: 160px;
 }
 
-::ng-deep .mat-checkbox .mat-checkbox-frame {
-  border-color: #3f51b5;
+::ng-deep .mat-checkbox-frame {
+  border-color: var(--mainColor);
+}
+
+::ng-deep .mat-checkbox-background {
   background-color: whitesmoke;
 }
 
 .image-checkbox {
   position: absolute;
-  left: 4px;
-  top: 8px;
+  left: 8px;
+  top: 16px;
 }
 
 .loader-container {
@@ -64,41 +73,48 @@ li:last-child .text-container {
 
 .text-container {
   position: absolute;
-  bottom: 3px;
+  top: 166px;
   left: 9px;
   min-width: 160px;
   display: flex;
+  gap: 2px;
   flex-wrap: wrap;
-  height: 21%;
-  gap: 4px;
+  width: calc(100% - 20px);
 }
 
 .text {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 12.5px;
-  color: white;
-  line-height: 9px;
+  padding: 0 5px;
 }
 
 .show-more {
-  color: #3f51b5;
+  color: var(--mainColor);
+  cursor: pointer;
 }
 
 .tag-container{
-  border: 4px solid #3f51b5;
-  border-radius: 41px;
-  background-color: #3f51b5;
+  border-radius: 15px;
+  background-color: var(--mainColor);
+  padding: 2px 10px;
+  font-weight: 100;
+  color: #fff;
 }
 
 .tag-tooltip-hint {
+  /* background: #8BBEE8FF; */
   background: #b71c1c;
 }
 
 .no-images-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 60%;
+  color: #cfcfcf;
+  font-size: 35px;
+}
+
+.no-images-container .material-icons {
+  font-size: 55px;
+  padding-bottom: 20px;
 }

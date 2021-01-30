@@ -23,8 +23,6 @@ export class NoBoardsComponent implements OnInit {
 
   openDialog(): void {
     this.dialog.open(CreateBoardModalComponent, {
-      width: '48%',
-      height: '43%',
       data: { name: this.name },
     });
   }

@@ -1,27 +1,33 @@
-<div class="menu-container">
+<div class="pb-container">
   <app-board-management></app-board-management>
-
-  <div class="current-board-work">
-    <app-url-input></app-url-input>
-    
-    <div class="tagging-api-button-container">
-      <button
-        class="tagging-api-button"
-        mat-stroked-button color="basic"
-        (click)="runTaggingApi()"
-        [disabled]="!isCheckedImages"
-      >RUN TAGGING API</button>
-    </div>
-    
-    <div class="delete-images-button-container">
-      <button
-        class="delete-images-button"
-        mat-stroked-button color="warn"
-        (click)="deleteImages()"
-        [disabled]="!isCheckedImages"
-      >
-        <mat-icon>delete</mat-icon> DELETE
+</div>
+<div class="current-board-work__wrapper">
+  <div class="pb-container">
+    <div class="current-board-work">
+      <app-url-input></app-url-input>
+      <button class="current-board-work__more" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
       </button>
     </div>
   </div>
 </div>
+<mat-menu #menu="matMenu">
+  <button
+    class="tagging-api-button"
+    mat-menu-item
+    (click)="runTaggingApi()"
+    [disabled]="!isCheckedImages"
+  >
+    <mat-icon>dialpad</mat-icon>
+    <span>RUN TAGGING API</span>
+  </button>
+  <button
+    mat-menu-item
+    color="warn"
+    (click)="deleteImages()"
+    [disabled]="!isCheckedImages"
+  >
+    <mat-icon>delete</mat-icon>
+    <span>DELETE</span>
+  </button>
+</mat-menu>

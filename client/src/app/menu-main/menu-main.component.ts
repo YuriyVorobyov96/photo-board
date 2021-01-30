@@ -26,6 +26,7 @@ export class MenuMainComponent implements AfterViewInit, OnDestroy {
 
   runTaggingApi(): void {
     this.imageService.getImagesTags();
+    this.imageService.uncheckAll();
   }
 
   deleteImages(): void {

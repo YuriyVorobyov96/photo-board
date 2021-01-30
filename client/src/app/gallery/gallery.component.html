@@ -4,13 +4,9 @@
           class="image-container"
           *ngFor="let image of images"
         >
-          <mat-checkbox
-            class="image-checkbox"
-            color="primary"
-            (change)="checkImage($event, image._id)"
-          ></mat-checkbox>
+        <mat-checkbox class="image-checkbox" (change)="checkImage($event, image._id)"></mat-checkbox>
           <div class="image-tags-placeholder" *ngIf="image.tags.length">
-            <div (click)="openDialog(image.url)">
+            <div>
               <img
                 class="image"
                 src="{{image.url}}"
@@ -20,8 +16,8 @@
             <div class="text-container">
               <span
                 matTooltip="{{image.tags.join(', ')}}"
-                [matTooltipShowDelay]="1000"
-                [matTooltipHideDelay]="1000"
+                [matTooltipShowDelay]="300"
+                [matTooltipHideDelay]="300"
                 [matTooltipPosition]="'below'"
                 class="text"
                 *ngFor="let tag of image.tags | slice:0:4; let i=index"
@@ -36,15 +32,15 @@
               </span>
             </div>
           </div>
-          <div (click)="openDialog(image.url)">
+          <div>
             <img
               *ngIf="!image.tags.length"
               class="image"
               src="{{image.url}}"
-              [src-fallback]="'../../assets/image-not-found.jpg'"
+              [src-fallback]="'https://a2seven-public-images.s3.eu-central-1.amazonaws.com/iin.png'"
               matTooltip="{{image.tags.join(', ')}}"
-              [matTooltipShowDelay]="1000"
-              [matTooltipHideDelay]="1000"
+              [matTooltipShowDelay]="300"
+              [matTooltipHideDelay]="300"
               [matTooltipPosition]="'below'"
               (click)="openDialog(image.url)"
             >

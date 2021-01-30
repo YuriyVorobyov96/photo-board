@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,6 +16,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatMenuModule } from '@angular/material/menu';
 import { HeaderComponent } from './header/header.component';
 import { MenuMainComponent } from './menu-main/menu-main.component';
 import { UrlInputComponent } from './menu-main/url-input/url-input.component';
@@ -27,6 +28,8 @@ import { ImgFallbackModule } from 'ngx-img-fallback';
 import { NoBoardsComponent } from './no-boards/no-boards.component';
 import { CreateBoardModalComponent } from './shared/components/create-board-modal/create-board-modal.component';
 import { DeleteBoardModalComponent } from './delete-board-modal/delete-board-modal.component';
+import { MasonryGalleryModule } from 'ngx-masonry-gallery';
+import { NgxMasonryModule } from 'ngx-masonry';
 
 @NgModule({
   declarations: [
@@ -59,6 +62,10 @@ import { DeleteBoardModalComponent } from './delete-board-modal/delete-board-mod
     ImgFallbackModule,
     MatGridListModule,
     MatCheckboxModule,
+    MatMenuModule,
+    ReactiveFormsModule,
+    MasonryGalleryModule,
+    NgxMasonryModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,28 +1,14 @@
-.menu-container {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  width: 66%;
+.current-board-work__wrapper {
+  margin-top: 20px;
+  border-top: 3px solid var(--mainColor);
 }
 
 .current-board-work {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
 }
 
-.tagging-api-button-container {
-  margin-top: 17px;
-}
-
-.delete-images-button-container {
-  margin-top: 17px;
-}
-
-.tagging-api-button {
-  border-radius: 41px;
-}
-
-.delete-images-button {
-  border-radius: 41px;
+.current-board-work__more {
+  color: var(--mainTextColor);
 }

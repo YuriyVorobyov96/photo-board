@@ -1,4 +1,89 @@
 /* You can add global styles to this file, and also import other style files */
 
+/* reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+body {
+	line-height: 1;
+	color: black;
+	background: white;
+}
+ol, ul {
+	list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+
+/* application styles */
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.pb-container {
+    margin: 0 auto;
+    width: 1200px;
+}
+
+/* rewrite material styles */
+.mat-button,
+.mat-icon-button,
+.mat-stroked-button,
+.mat-flat-button {
+    border-radius: 20px !important;
+}
+.mat-flat-button.mat-primary,
+.mat-fab.mat-primary {
+	background-color: var(--mainColor);
+	box-shadow: none;
+}
+
+.mat-button-wrapper {
+    padding: 0 7px;
+}
+
+.mat-dialog-container {
+    width: 400px !important;
+}
+
+.mat-checkbox-layout {
+	border-radius: 5px;
+	border: 2px solid var(--mainColor);
+}
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+	background-color: var(--mainColor);
+}
+
+:root {
+    --mainTextColor: #232323;
+    --mainColor: #307AE8;
+	--bgColor: #F6F6F6;
+	--errColor: #f44336;
+}   

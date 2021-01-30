@@ -5,6 +5,11 @@
   margin-top: 1%;
 }
 
+.board-management-menu-container .left-part {
+  display: flex;
+  align-items: center;
+}
+
 .select-board-input {
   width: 322px;
 }
@@ -22,13 +27,6 @@
 }
 
 .add-board {
-  font-weight: 200;
-  font-size: 32.5px;
-  color: white;
-  line-height: 9px;
-}
-
-.delete-board {
   font-weight: 200;
   font-size: 32.5px;
   color: white;

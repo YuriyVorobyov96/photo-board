@@ -1,23 +1,20 @@
-<div class="no-boards-container">
-  <div>
-    <div class="background-container">
+<div class="pb-container">
+  <div class="no-boards-container">
+    <div class="no-boards-container__image">
       <img src="../../assets/empty-board.png">
-    </div>
-    <div class="text-container">
-      <p class="text">
+      <div class="text">
         YOU HAVE NOT BOARDS YET
-      </p>
+      </div>
     </div>
-  </div>
-
-  <div class="no-boards-create-board-button-container">
-    <button
-      mat-flat-button
-      color="primary"
-      class="crete-board-button"
-      (click)="openDialog()"
-    >
-      CREATE A NEW BOARD
-    </button>
+    <div class="no-boards-container__button">
+      <button
+        mat-flat-button
+        color="primary"
+        class="crete-board-button"
+        (click)="openDialog()"
+      >
+        CREATE A NEW BOARD
+      </button>
+    </div>
   </div>
 </div>

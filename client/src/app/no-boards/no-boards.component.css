@@ -1,31 +1,21 @@
 .no-boards-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  margin: auto;
-  height: 45%;
-  margin-top: 10%;
+  height: calc(100vh - 90px);
+  justify-content: center;
+  min-height: 500px;
 }
 
-.background-container {
+.no-boards-container__image img {
+  width: 425px;
+}
+
+.no-boards-container__image .text {
   text-align: center;
-}
-
-.text-container {
-  text-align: center;
-}
-
-.text {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
   font-size: 20px;
-  line-height: 23px;
-  text-transform: uppercase;
-  color: #232323;
 }
 
-.crete-board-button {
-  border-radius: 41px;
+.no-boards-container__button {
+  padding-top: 40px;
 }

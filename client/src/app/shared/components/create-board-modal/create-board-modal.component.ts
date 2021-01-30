@@ -26,6 +26,7 @@ export class CreateBoardModalComponent {
       .subscribe(
         data => {
           this.boardService.newBoard$.next(data);
+          this.boardService._currentBoard.next(data._id);
           this.dialogRef.close(data.name);
         },
         err => this.errorService.openSnackBar(err.error.error),

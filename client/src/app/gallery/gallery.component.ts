@@ -1,6 +1,7 @@
-import { AfterViewInit, Component, Inject, OnDestroy } from '@angular/core';
+import { AfterViewInit, Component, Inject, OnDestroy, ViewChild } from '@angular/core';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { NgxMasonryComponent } from 'ngx-masonry';
 import { Observable, Subscription } from 'rxjs';
 import { tap } from 'rxjs/internal/operators/tap';
 import { IImage } from '../shared/interfaces';
@@ -27,6 +28,8 @@ export class GalleryComponent implements AfterViewInit, OnDestroy {
   subsUncheckAll$!: Subscription;
   imagesOnCurrentBoard$!: Observable<IImage[]>;
   images: IImage[] = [];
+  @ViewChild(NgxMasonryComponent) masonry!: NgxMasonryComponent;
+
 
   constructor(
     public dialog: MatDialog,
