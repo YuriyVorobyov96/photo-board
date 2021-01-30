@@ -1,0 +1,64 @@
+.mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 70%;
+  margin-top: 5%;
+}
+
+.delete-board-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  margin-left: 4%;
+  width: 93%;
+}
+
+.mat-dialog-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-container {
+  width: 100%;
+  white-space: nowrap;
+  text-transform: none;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: uppercase;
+  color: #232323;
+}
+
+.delete-board-main-container {
+  margin-bottom: 10%;
+}
+
+.main-text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 21px;
+  color: #232323;
+}
+
+.board-name-input{
+  width: 100%;
+}
+
+.cancel-button{
+  border-radius: 41px;
+}
+
+.delete-button{
+  border-radius: 41px;
+}

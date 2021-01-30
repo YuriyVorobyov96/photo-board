@@ -1,0 +1,70 @@
+<div class="gallery-container" *ngIf="currentBoardId.length; else noImages">
+    <ul class="gallery-content" *ngIf="imagesOnCurrentBoard$ | async as boardImages; else loader">
+        <li
+          class="image-container"
+          *ngFor="let image of images"
+        >
+          <mat-checkbox
+            class="image-checkbox"
+            color="primary"
+            (change)="checkImage($event, image._id)"
+          ></mat-checkbox>
+          <div class="image-tags-placeholder" *ngIf="image.tags.length">
+            <div (click)="openDialog(image.url)">
+              <img
+                class="image"
+                src="{{image.url}}"
+                [src-fallback]="'../../assets/image-not-found.jpg'"
+              >
+            </div>
+            <div class="text-container">
+              <span
+                matTooltip="{{image.tags.join(', ')}}"
+                [matTooltipShowDelay]="1000"
+                [matTooltipHideDelay]="1000"
+                [matTooltipPosition]="'below'"
+                class="text"
+                *ngFor="let tag of image.tags | slice:0:4; let i=index"
+              >
+                <span
+                  class="tag-container"
+                  *ngIf="image.tags.length > 0 && i < 3; else moreTags"
+                >
+                  {{tag}}
+                </span>
+                <ng-template #moreTags><span class="show-more">Show More...</span></ng-template>
+              </span>
+            </div>
+          </div>
+          <div (click)="openDialog(image.url)">
+            <img
+              *ngIf="!image.tags.length"
+              class="image"
+              src="{{image.url}}"
+              [src-fallback]="'../../assets/image-not-found.jpg'"
+              matTooltip="{{image.tags.join(', ')}}"
+              [matTooltipShowDelay]="1000"
+              [matTooltipHideDelay]="1000"
+              [matTooltipPosition]="'below'"
+              (click)="openDialog(image.url)"
+            >
+          </div>
+        </li>
+      </ul>
+</div>
+
+<ng-template #loader>
+  <div class="loader-container">
+    <mat-spinner *ngIf="pending"></mat-spinner>
+  </div>
+</ng-template>
+
+<ng-template #noImages>
+  <div class="no-images-container">
+    <img src="../../assets/no-images.png">
+  </div>
+</ng-template>
+
+<div class="no-images-container" *ngIf="!images.length && currentBoardId.length && !pending">
+  <img src="../../assets/no-images.png">
+</div>

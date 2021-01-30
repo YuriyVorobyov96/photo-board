@@ -1,0 +1,33 @@
+<div class="delete-board-container">
+  <div mat-dialog-content>
+    <div class="delete-board-header-container">
+      <div class="text-container">
+        <p class="text">DELETE BOARD</p>
+      </div>
+    </div>
+    <div class="delete-board-main-container">
+      <p class="main-text">
+        Are you sure you want to remove this board?
+      </p>
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <button
+      class="cancel-button"
+      mat-raised-button
+      color="basic"
+      (click)="onNoClick()"
+    >
+      CANCEL
+    </button>
+    <button
+      class="delete-button"
+      mat-raised-button
+      color="warn"
+      (click)="deleteBoard()"
+      cdkFocusInitial
+    >
+      DELETE
+    </button>
+  </div>
+</div>

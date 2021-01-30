@@ -1,0 +1,20 @@
+<app-header></app-header>
+
+<div *ngIf="!isLoading; else loader">
+  <div *ngIf="isBoardsExist; else noBoards">
+    <app-menu-main></app-menu-main>
+    <app-gallery></app-gallery>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+
+<ng-template #noBoards>
+  <app-no-boards></app-no-boards>
+</ng-template>
+
+<ng-template #loader>
+  <div class="loader-container">
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+  </div>
+</ng-template>

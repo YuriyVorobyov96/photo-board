@@ -1,0 +1,36 @@
+.board-management-menu-container {
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  margin-top: 1%;
+}
+
+.select-board-input {
+  width: 322px;
+}
+
+.create-board-button-container {
+  margin-left: 30px;
+}
+
+.delete-board-button-container {
+  margin-left: 25px;
+}
+
+.crete-board-button {
+  border-radius: 41px;
+}
+
+.add-board {
+  font-weight: 200;
+  font-size: 32.5px;
+  color: white;
+  line-height: 9px;
+}
+
+.delete-board {
+  font-weight: 200;
+  font-size: 32.5px;
+  color: white;
+  line-height: 9px;
+}

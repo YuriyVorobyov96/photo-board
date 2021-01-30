@@ -1,0 +1,34 @@
+<div class="board-management-menu-container">
+  <div>
+    <mat-form-field class="select-board-input">
+      <mat-label>Select an existing board</mat-label>
+      <mat-select [(ngModel)]="selectedBoard" name="board">
+        <mat-option *ngFor="let board of boards" [value]="board._id" (click)="setBoard(board._id)">
+          {{board.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <span class="delete-board-button-container">
+      <button
+        class="delete-board-button"
+        mat-fab
+        color="warn"
+        [disabled]="!selectedBoard"
+        (click)="openDeletionDialog()"
+      >
+        <span class="delete-board"><mat-icon>delete</mat-icon></span>
+      </button>
+    </span>
+  </div>
+
+  <div class="create-board-button-container">
+    <button
+      class="crete-board-button"
+      mat-fab
+      color="primary"
+      (click)="openDialog()"
+    >
+      <span class="add-board">+</span>
+    </button>
+  </div>
+</div>

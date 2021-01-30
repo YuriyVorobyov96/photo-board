@@ -1,0 +1,22 @@
+.url-input-container {
+  display: flex;
+  margin: auto;
+  margin-top: 12px;
+}
+
+.url-form-field {
+  width: 322px;
+}
+
+.mat-button-base {
+  margin: auto;
+}
+
+.url-button-container {
+  margin-left: 25px;
+  margin-top: 5px;
+}
+
+.add-image-button {
+  border-radius: 41px;
+}

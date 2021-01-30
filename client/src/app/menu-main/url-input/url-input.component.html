@@ -1,0 +1,21 @@
+<div class="url-input-container">
+  <mat-form-field class="url-form-field">
+    <mat-label>Image URL</mat-label>
+    <input matInput type="text" [(ngModel)]="url" >
+    <button mat-button *ngIf="url" matSuffix mat-icon-button aria-label="Clear" (click)="url=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <div class="url-button-container">
+    <button
+      class="add-image-button"
+      mat-flat-button color="primary"
+      [disabled]="!url.length || !currentBoardId.length"
+      (click)="addImage(url)"
+      (click)="url=''"
+    >
+      ADD
+    </button>
+  </div>
+</div>
