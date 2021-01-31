@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewEncapsulation, OnDestroy, OnInit } from '@angular/core';
+import { Component, AfterViewInit, ViewEncapsulation, OnDestroy } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { BoardService } from 'src/app/shared/services/board.service';
 import { IBoard, IImage } from 'src/app/shared/interfaces';
@@ -7,7 +7,6 @@ import { Subscription } from 'rxjs';
 import { ErrorService } from 'src/app/shared/services/error.service';
 import { CreateBoardModalComponent } from 'src/app/shared/components/create-board-modal/create-board-modal.component';
 import { DeleteBoardModalComponent } from 'src/app/delete-board-modal/delete-board-modal.component';
-import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-board-management',
@@ -15,14 +14,13 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./board-management.component.css'],
   encapsulation: ViewEncapsulation.None,
 })
-export class BoardManagementComponent implements OnInit, AfterViewInit, OnDestroy {
+export class BoardManagementComponent implements AfterViewInit, OnDestroy {
 
   name = '';
   boards: IBoard[] = [];
   images: IImage[] = [];
   subsNewBoard$!: Subscription;
   subsBoardToDelete$!: Subscription;
-  boardsForm!: FormGroup;
   selectedBoard = '';
   currentBoardId = '';
 
@@ -31,14 +29,7 @@ export class BoardManagementComponent implements OnInit, AfterViewInit, OnDestro
     public boardService: BoardService,
     public imageService: ImageService,
     public errorService: ErrorService,
-    private fb: FormBuilder,
   ) {}
-
-  ngOnInit(): void {
-    this.boardsForm = this.fb.group({
-      selectedBoard: ['']
-    });
-  }
 
   ngAfterViewInit(): void {
     this.boardService.getBoards()
@@ -48,17 +39,8 @@ export class BoardManagementComponent implements OnInit, AfterViewInit, OnDestro
       );
     this.subsNewBoard$ = this.boardService.newBoard$
       .subscribe(board => {
-        // this.boardsForm = this.fb.group({
-        //   selectedBoard: [board.name]
-        // });
         this.selectedBoard = board.name;
-
         this.currentBoardId = board._id;
-
-        console.log(this.boardsForm)
-
-        // this.boardsForm.get('selectedBoard')!.setValue(board.name);
-
         this.boards.push(board);
       });
     this.subsBoardToDelete$ = this.boardService.boardToDelete$

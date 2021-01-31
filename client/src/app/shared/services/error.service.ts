@@ -9,8 +9,6 @@ export class ErrorService {
   constructor(private _snackBar: MatSnackBar) { }
 
   openSnackBar(message: string): void {
-    console.log(message);
-
     if (!message || !message.length) {
       message = 'Error! Something went wrong!';
     }
